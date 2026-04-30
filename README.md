@@ -2,6 +2,10 @@
 
 3D printed door control with Alexa for under $50
 
+![Alt Text](images/fullAssemblyReal.png)
+
+![Alt Text](images/fullAssemblyImage.png)
+
 # Overview
 
 This project is a cost-effective system designed to automate the opening and closing of a standard bedroom door. The assembly mounts directly at the door hinge and utilizes an ESP32-controlled stepper motor to provide precise mechanical movement. To keep the project accessible and easy to replicate, the frame and internal gears are almost entirely 3D printed in PLA. On the software side, the system integrates with Amazon Alexa via the Sinric Pro library, allowing for voice control. 
@@ -292,6 +296,8 @@ Parts: 2 10 x 60 x 3mm magnets, 4 Command Strips, Door Magnet print, Wall Magnet
 4. Stick the wall magnet onto the wall level with the door magnet so that it does not interfere with the doors path, but is lined up with the door magnet when the door is closed.
 
 5. TEST: The 2 magnets should visibly move towards each other when the door is closed, and have enough strength to hold the door shut without physically touching each other or the door
+
+![Alt Text](images/doorMagnets.png)
 
 ![Alt Text](images/fullAssemblyImage.png)
 
