@@ -1,4 +1,4 @@
-**Alexa-Compatible Bedroom Door Control**
+# **Alexa-Compatible Bedroom Door Control**
 
 3D printed door control with Alexa for under $50
 
@@ -23,6 +23,8 @@ This project is a cost-effective system designed to automate the opening and clo
 | Cycloidal Drive | 4 | 8 cm | Smoothest, but more complex assembly |
 
 2. Slippage Mechanism: One requirement was ensuring the door remained free to be manually opened and closed while the system was attached. Due to the high 65:1 gear ratio, a direct connection between the motor and the door would make the motor nearly impossible to backdrive.The first design to address this used two flat discs lined with a high-friction material pushed together by a spring. The goal was to allow the plates to slip if manually pushed, while maintaining enough friction to move the door with the motor. However, when testing it was found that getting enough friction to allow the motor to control the door was very difficult, and made it hard to move the door manually. The final design utilizes a slotted cutout in the base gear. This allows the arm to move freely within a specific range of motion without engaging the motor’s drivetrain. This design offers no resistance for manual movement while still allowing the motor to fully control the door when needed.
+
+![Alt Text](images/cutoutDesign.png)
 
 3. Code: The design is built on custom motor control logic and utilizes the Sinric Pro library for Amazon Alexa integration. This library was chosen for its reliability and wide compatibility compared to alternatives. One important feature of the software design was creating a non-blocking stepper motor loop. Because the door takes a large amount of  time to open or close, a blocking loop would prevent the ESP32 from communicating with the Alexa servers during that time, causing the device to appear unresponsive. By calling a function to step the motor once and tracking the time since that last step, it is possible to have a non-blocking stepper motor loop that allows Sinric Pro to continue running and staying connected.
 
@@ -157,7 +159,7 @@ Tolerances: Right now, inside bearings are set to 1.21 cm instead of 1.20 cm and
 
 # Assembly
 
-Step 1: Arm Linkage Assembly  
+**Step 1: Arm Linkage Assembly**  
 Parts: Arm 1 and Arm 1 Top, Arm 2, Door Attachment and Door Attachment Side, 4 Bearings, 2 M3x6mm screws, 2 M3x15mm screws, 2 M3 washers, 4 M3 nuts.
 
 1. Press-fit the four bearings onto the cylinders located at both ends of Arm 2\.  
@@ -168,18 +170,24 @@ Parts: Arm 1 and Arm 1 Top, Arm 2, Door Attachment and Door Attachment Side, 4 B
      
 4. Verify that the completed assembly moves smoothly at all joints and that all screws are securely tightened.
 
-Step 2: Main Body and Arm Integration  
+![Alt Text](images/armLinkageStep1.png)
+
+**Step 2: Main Body and Arm Integration**  
 Parts: Main Body, Worm Gear, Base Gear, Base Gear Top, Lubricant, 6 Bearings, 2 M3x10mm screws, Arm Assembly
 
 1. Worm Gear Preparation: Apply lubricant to the Worm Gear threads and install a bearing on each end of the shaft. Insert the assembly into the main body housing, ensuring the motor shaft receptacle faces outward. Confirm the worm gear rotates freely within the housing.
 
 2. Base Gear Installation: Seat one bearing into the underside of the Base Gear. Slide the gear onto the main shaft until it reaches the base. Manually rotate the worm gear to mesh the teeth and align the base gear to the angle specified in the reference image.
 
+![Alt Text](images/baseGearReference.png)
+
 3. Arm Linkage Integration: Install two bearings into the housing of Arm 1, one on top and one on the bottom. Slide the pre-assembled Arm Assembly onto the main shaft.
 
 4. Drive Train Finalization: Install a bearing into the Base Gear Top and slide it down the main shaft. Secure the Base Gear Top to the Base Gear using two M3x10mm screws, ensuring the arm assembly remains captured but mobile.
 
-Step 3: Motor and Driver Installation  
+![Alt Text](images/mainBodyAssemblyStep2.png)
+
+**Step 3: Motor and Driver Installation**
 Parts: Stepper Motor, Motor Driver, 1 M3x20mm screw, 4 M3x5mm screws
 
 1. Insert the Stepper Motor into the main body, ensuring the shaft fully engages with the internal worm gear.
@@ -192,7 +200,9 @@ Parts: Stepper Motor, Motor Driver, 1 M3x20mm screw, 4 M3x5mm screws
 
 5. Secure the driver using four M3x5mm screws and connect the stepper motor wiring harness to the designated header on the driver board.
 
-Step 4: Custom Low-Profile Power Harness  
+![Alt Text](images/stepperMotorInstallStep3.png)
+
+**Step 4: Custom Low-Profile Power Harness**
 Parts: 3x Female-to-Female (F-F) Jumper Wires, DC Power Jack Adapter
 
 \*\*\*Short Circuit Risk: Ensure all junctions are thoroughly insulated. Exposed wire strands can cause a short circuit, potentially damaging the ESP32 or the motor driver. Verify all connections with a multimeter before applying power.  
@@ -206,7 +216,7 @@ Parts: 3x Female-to-Female (F-F) Jumper Wires, DC Power Jack Adapter
 
 4. Insulation: Seal each junction with heat-shrink tubing. This provides mechanical strain relief and prevents short circuits within the cramped enclosure.
 
-Step 5\. Logic and Power Wiring  
+**Step 5: Logic and Power Wiring**  
 Parts: ESP32C6, Jumper Wires
 
 1. Microcontroller Placement: Seat the ESP32C6 into the designated thin-walled section of the main body, ensuring the pins align with the two rows of cutouts. The USB-C port should face towards the middle of the body.  
@@ -235,7 +245,7 @@ Parts: ESP32C6, Jumper Wires
 
    
 
-Step 6: Enclosure  
+**Step 6: Enclosure**  
 	Parts: Body Lid, Electronics Lid, 4 M3x10mm screws, 2 M3x20mm screw, 1 M3 Washer.
 
 1. Align the Body Lid with the main shaft and secure it using three M3x10mm screws.
@@ -246,7 +256,7 @@ Step 6: Enclosure
 
 4. Place the electronics lid over the cables and screw in one M3x10mm screw on the top and one M3x20mm screw on the bottom.
 
-Step 7: Wall Mount Positioning  
+**Step 7: Wall Mount Positioning**  
 Parts: Mounting Bracket, 4 Drywall Anchors and Screws
 
 1. Alignment: Attach the mounting bracket to the main assembly. Position the assembly against the wall on the hinge side of the door.  
@@ -257,7 +267,7 @@ Parts: Mounting Bracket, 4 Drywall Anchors and Screws
      
 4. Anchoring: Remove the assembly, drill the marked holes, and insert the drywall anchors. Detach the mounting bracket from the main assembly and secure the bracket to the wall using the provided screws.
 
-Step 8: Door Attachment  
+**Step 8: Door Attachment**  
 Parts: 4 Command Strips
 
 1. Adhesive Preparation: Apply two Command Strips to the rear of the door attachment piece (one on each half). Reinstall the main assembly onto the wall-mounted bracket.  
@@ -270,7 +280,7 @@ Parts: 4 Command Strips
      
 3. Final Adhesion: Apply the matching Command Strips to the door surface at the calibrated position and firmly press the attachment piece into place.
 
-Step 9: Magnetic Catch (Optional \- Keeps door closed in door naturally swings open)  
+**Step 9: Magnetic Catch** (Optional \- Keeps door closed in door naturally swings open)  
 Parts: 2 10 x 60 x 3mm magnets, 4 Command Strips, Door Magnet print, Wall Magnet print
 
 1. Put command strips on the bottom of both the door magnet and wall magnet prints. Ensure the foam end is pointing away from the magnets housing.
@@ -282,6 +292,8 @@ Parts: 2 10 x 60 x 3mm magnets, 4 Command Strips, Door Magnet print, Wall Magnet
 4. Stick the wall magnet onto the wall level with the door magnet so that it does not interfere with the doors path, but is lined up with the door magnet when the door is closed.
 
 5. TEST: The 2 magnets should visibly move towards each other when the door is closed, and have enough strength to hold the door shut without physically touching each other or the door
+
+![Alt Text](images/fullAssemblyImage.png)
 
 # Future Improvements
 
