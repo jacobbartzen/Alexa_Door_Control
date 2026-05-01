@@ -101,8 +101,9 @@ The design includes a primary slippage mechanism to allow for manual motion, as 
 
 # Printed Parts
 
-All parts can be printed in PLA. 1 of each part must be printed.  
-Onshape:[https://cad.onshape.com/documents/3e4b522c54b8b294a1afd016/w/298214d4b85e58891adc7ef1/e/4cf30c14211e550b4f351c0a](https://cad.onshape.com/documents/3e4b522c54b8b294a1afd016/w/298214d4b85e58891adc7ef1/e/4cf30c14211e550b4f351c0a)
+All parts can be printed in PLA. 1 of each part must be printed.
+All print files are available in the Onshape document linked below. Before printing, open the assembly and verify the bearing and shaft tolerances match your printer's calibration — these dimensions are critical for proper fit. Onshape allows you to adjust tolerances easily in the variables tab. The parts can be found and downloaded in the main assembly, or navigate to the Worm Gear Design folder to view each part individually and make adjustments.
+Onshape:[Link](https://cad.onshape.com/documents/3e4b522c54b8b294a1afd016/w/298214d4b85e58891adc7ef1/e/4cf30c14211e550b4f351c0a)
 
 | Name | Infill | Walls | Support | Layer Height | Notes |
 | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -165,6 +166,7 @@ Tolerances: Right now, inside bearings are set to 1.21 cm instead of 1.20 cm and
 
 **Step 1: Arm Linkage Assembly**  
 Parts: Arm 1 and Arm 1 Top, Arm 2, Door Attachment and Door Attachment Side, 4 Bearings, 2 M3x6mm screws, 2 M3x15mm screws, 2 M3 washers, 4 M3 nuts.
+**Download printed parts from the Onshape document linked in the printed parts section
 
 1. Press-fit the four bearings onto the cylinders located at both ends of Arm 2\.  
      
